@@ -12,9 +12,9 @@ BEGIN
     FOR rec IN (
         SELECT 
             id_comentario,
-            NVL(LAG(cd_comentario) OVER (ORDER BY id_comentario), 'Vazio') AS anterior,
-            cd_comentario AS atual,
-            NVL(LEAD(cd_comentario) OVER (ORDER BY id_comentario), 'Vazio') AS proximo
+            NVL(DBMS_LOB.SUBSTR(LAG(cd_comentario) OVER (ORDER BY id_comentario), 4000, 1), 'Vazio') AS anterior,
+            DBMS_LOB.SUBSTR(cd_comentario, 4000, 1) AS atual,
+            NVL(DBMS_LOB.SUBSTR(LEAD(cd_comentario) OVER (ORDER BY id_comentario), 4000, 1), 'Vazio') AS proximo
         FROM T_OR_COMENTARIO
     ) LOOP
 
