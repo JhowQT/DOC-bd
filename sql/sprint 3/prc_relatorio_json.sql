@@ -1,15 +1,8 @@
-CREATE OR REPLACE PROCEDURE prc_relatorio_json
+CREATE OR REPLACE PROCEDURE prc_relatorio_json (
+    p_result OUT CLOB
+)
 AS
-    CURSOR c_dados IS
-        SELECT 
-            u.nm_usuario,
-            t.tt_trilha_carreira,
-            c.cd_comentario
-        FROM T_OR_COMENTARIO c
-        JOIN T_OR_USUARIO u ON c.id_usuario = u.id_usuario
-        JOIN T_OR_TRILHA_CARREIRA t ON c.id_trilha_carreira = t.id_trilha_carreira;
-
-    v_json CLOB;
+    v_json CLOB := '';
     v_count NUMBER;
 BEGIN
 
@@ -19,24 +12,35 @@ BEGIN
         RAISE_APPLICATION_ERROR(-20060, 'Nenhum comentário encontrado');
     END IF;
 
-    FOR rec IN c_dados LOOP
+    FOR rec IN (
+        SELECT 
+            u.nm_usuario,
+            t.tt_trilha_carreira,
+            c.cd_comentario
+        FROM T_OR_COMENTARIO c
+        JOIN T_OR_USUARIO u ON c.id_usuario = u.id_usuario
+        JOIN T_OR_TRILHA_CARREIRA t ON c.id_trilha_carreira = t.id_trilha_carreira
+    ) LOOP
 
-        v_json := fn_gera_json_comentario(
-            rec.nm_usuario,
-            rec.tt_trilha_carreira,
-            rec.cd_comentario
-        );
-
-        DBMS_OUTPUT.PUT_LINE(v_json);
+        v_json := v_json ||
+            fn_gera_json_comentario(
+                rec.nm_usuario,
+                rec.tt_trilha_carreira,
+                rec.cd_comentario
+            ) || CHR(10);
 
     END LOOP;
 
+    p_result := v_json;
+
 EXCEPTION
     WHEN NO_DATA_FOUND THEN
-        DBMS_OUTPUT.PUT_LINE('Sem dados');
+        p_result := 'Erro: Nenhum dado encontrado';
+
     WHEN VALUE_ERROR THEN
-        DBMS_OUTPUT.PUT_LINE('Erro de valor');
+        p_result := 'Erro: Problema de conversão de dados';
+
     WHEN OTHERS THEN
-        DBMS_OUTPUT.PUT_LINE('Erro geral: ' || SQLERRM);
+        p_result := 'Erro geral: ' || SQLERRM;
 END;
 /
