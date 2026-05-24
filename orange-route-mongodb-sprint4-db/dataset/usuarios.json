@@ -1,0 +1,54 @@
+[
+    {
+        "_id": "6a1314b58e7c3553097324de",
+        "nome": "João Silva",
+        "email": "joao@gmail.com",
+        "senha": "123456",
+        "telefone": "11999990001",
+        "cidade": "São Paulo",
+        "bairro": "Centro",
+        "ativo": true,
+        "tipo_usuario": "COMUM",
+        "pontuacao": 150,
+        "data_cadastro": "2026-05-20"
+    },
+    {
+        "_id": "6a1314b58e7c3553097324df",
+        "nome": "Maria Souza",
+        "email": "maria@gmail.com",
+        "senha": "123456",
+        "telefone": "11999990002",
+        "cidade": "Osasco",
+        "bairro": "Vila Yara",
+        "ativo": true,
+        "tipo_usuario": "ADMIN",
+        "pontuacao": 300,
+        "data_cadastro": "2026-05-20"
+    },
+    {
+        "_id": "6a1314b58e7c3553097324e0",
+        "nome": "Carlos Lima",
+        "email": "carlos@gmail.com",
+        "senha": "123456",
+        "telefone": "11999990003",
+        "cidade": "Barueri",
+        "bairro": "Alphaville",
+        "ativo": true,
+        "tipo_usuario": "COMUM",
+        "pontuacao": 90,
+        "data_cadastro": "2026-05-20"
+    },
+    {
+        "_id": "6a1314b58e7c3553097324e1",
+        "nome": "Ana Costa",
+        "email": "ana@gmail.com",
+        "senha": "123456",
+        "telefone": "11999990004",
+        "cidade": "Santos",
+        "bairro": "Boqueirão",
+        "ativo": true,
+        "tipo_usuario": "MODERADOR",
+        "pontuacao": 450,
+        "data_cadastro": "2026-05-20"
+    }
+]

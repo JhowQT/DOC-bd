@@ -1,0 +1,41 @@
+[
+    {
+        "_id": "6a1314b58e7c3553097324e5",
+        "usuario": "João Silva",
+        "comentario": "Excelente trilha!",
+        "trilha": "Java Básico",
+        "curtidas": 10,
+        "ativo": true,
+        "cidade": "São Paulo",
+        "bairro": "Centro",
+        "tipo_usuario": "COMUM",
+        "reportado": false,
+        "data_comentario": "2026-05-20"
+    },
+    {
+        "_id": "6a1314b58e7c3553097324e6",
+        "usuario": "Maria Souza",
+        "comentario": "TESTE MONGO!",
+        "trilha": "MongoDB para Iniciantes",
+        "curtidas": 25,
+        "ativo": true,
+        "cidade": "Osasco",
+        "bairro": "Vila Yara",
+        "tipo_usuario": "ADMIN",
+        "reportado": false,
+        "data_comentario": "2026-05-20"
+    },
+    {
+        "_id": "6a1314b58e7c3553097324e7",
+        "usuario": "Carlos Lima",
+        "comentario": "Aprendi bastante.",
+        "trilha": "Python CRUD",
+        "curtidas": 15,
+        "ativo": true,
+        "cidade": "Barueri",
+        "bairro": "Alphaville",
+        "tipo_usuario": "COMUM",
+        "reportado": false,
+        "data_comentario": "2026-05-20"
+    }
+]

@@ -1,0 +1,41 @@
+[
+    {
+        "_id": "6a1314b58e7c3553097324e2",
+        "titulo": "Java Básico",
+        "descricao": "Curso introdutório Java",
+        "categoria": "Backend",
+        "nivel": "Iniciante",
+        "duracao": "10h",
+        "autor": "João Silva",
+        "ativo": true,
+        "likes": 120,
+        "visualizacoes": 1000,
+        "data_criacao": "2026-05-20"
+    },
+    {
+        "_id": "6a1314b58e7c3553097324e3",
+        "titulo": "MongoDB para Iniciantes",
+        "descricao": "VIDEO SPRINT 3 FEITO EM MONGO",
+        "categoria": "Banco de Dados",
+        "nivel": "Intermediário",
+        "duracao": "8h",
+        "autor": "Maria Souza",
+        "ativo": true,
+        "likes": 200,
+        "visualizacoes": 2300,
+        "data_criacao": "2026-05-20"
+    },
+    {
+        "_id": "6a1314b58e7c3553097324e4",
+        "titulo": "Python CRUD",
+        "descricao": "CRUD completo em Python",
+        "categoria": "Python",
+        "nivel": "Avançado",
+        "duracao": "15h",
+        "autor": "Ana Costa",
+        "ativo": true,
+        "likes": 340,
+        "visualizacoes": 5000,
+        "data_criacao": "2026-05-20"
+    }
+]
